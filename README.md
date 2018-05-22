@@ -16,22 +16,30 @@ Licensed under the MIT License - [https://opensource.org/licenses/MIT](https://o
 
 ### Features
 
-- Automatically configures and runs openssh to set-up a reverse ssh connection during boot-up 
+- Tracks valuable assets to prevent any damages or misplacement
 
-- Automatically generates ssh keys
+- Tracks the number of customer footfall for each attraction
 
-- No need to store the server's password
+- Ensure that the duration of the usage of assets adhere to the stipulated timing imposed to the customer
 
-- Works with Debian-based systems, including Ubuntu
+- Immediate notice on which attraction require crowd control
 
-- 3-step configuration wizard that requires less than 1 minute to set-up  
+- Potentially alert lifesaving services in an event of a crisis
 
 
 ### System requirements
 
-- These instructions were tested on Ubuntu 15.10, Ubuntu 14.04.3, and Raspbian Jessie (Raspberry Pi)
+- Ubuntu 18.04 LTS
 
-- The installation script automatically installs openssh-server with Apt  
+- Nvidia Drivers
+
+- CUDA Toolkit 9.1
+
+- OpenCV 3.4.0
+   gcc-<=6 and g++<=6, required for compiling CUDA within OpenCV (Ubuntu 18.04 LTS comes with gcc-7 and g++-7 as default)
+  
+- Darknet Yolo v3 (Specific version required) --> https://github.com/pjreddie/darknet/tree/yolov3  
+   
 
 -----------------------
 
