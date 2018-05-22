@@ -1,4 +1,4 @@
-![visualfield logo](https://user-images.githubusercontent.com/39509760/40355237-77be9bbc-5de8-11e8-847c-bc5e173b34e7.jpg)
+<img width="108" alt="visualfieldlogo2" src="https://user-images.githubusercontent.com/39509760/40357347-78617d90-5dee-11e8-848f-c0fd4762203e.PNG">
 
 &nbsp;
 
