@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/facerecog/auto-ssh-tunnel/gh-pages/images/auto-ssh-tunnel%20logo.png" align="left" height="100" width="100" />
+![visualfield logo](https://user-images.githubusercontent.com/39509760/40355237-77be9bbc-5de8-11e8-847c-bc5e173b34e7.jpg)
 
 &nbsp;
 
@@ -10,21 +10,19 @@
 
 #  **Overview**
 
-Automatic SSH Tunnel is a Python script which can be used to create a Reverse SSH Tunnel between multiple computers running Linux and a centralized server.
-
-Licensed under the MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+Smart cameras are able to track assets and people in order to maximise business revenues and reduce leakages by being "aware" of their surroundings.
 
 ### Features
 
-- Tracks valuable assets to prevent any damages or misplacement
+- Tracks valuable assets to prevent any damages or misplacement.
 
-- Tracks the number of customer footfall for each attraction
+- Tracks the number of customer footfall for each attraction.
 
-- Ensure that the duration of the usage of assets adhere to the stipulated timing imposed to the customer
+- Ensure that the duration of the usage of assets adhere to the stipulated timing imposed to the customer.
 
-- Immediate notice on which attraction require crowd control
+- Immediate notice on which attraction require crowd control.
 
-- Potentially alert lifesaving services in an event of a crisis
+- Potentially alert lifesaving services in an event of a crisis.
 
 
 ### System requirements
