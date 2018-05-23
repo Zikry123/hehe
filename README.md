@@ -3,7 +3,8 @@
 &nbsp;
 &nbsp;
 &nbsp;  
-&nbsp;  
+&nbsp; 
+
 #  **Overview**
 
 Smart cameras are able to track assets and people in order to maximise business revenues and reduce leakages by being "aware" of their surroundings.
