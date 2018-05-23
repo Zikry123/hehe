@@ -1,12 +1,9 @@
 <img width="108" alt="visualfieldlogo2" src="https://user-images.githubusercontent.com/39509760/40357347-78617d90-5dee-11e8-848f-c0fd4762203e.PNG">
 &nbsp;
-
 &nbsp;
 &nbsp;
 &nbsp;  
 &nbsp;  
-
-
 #  **Overview**
 
 Smart cameras are able to track assets and people in order to maximise business revenues and reduce leakages by being "aware" of their surroundings.
