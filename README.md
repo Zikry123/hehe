@@ -81,54 +81,60 @@ Now `cd` into the newly extracted directory.
 
 ### Installation 
 
-__*Additional instructions for Mac OS X Users*__
+0. Install Ubuntu 18.04 LTS
+1. Install Nvidia Drivers
+   - Reboot
+2. Install gcc-<=6 and g++<=6, required for compiling CUDA within OpenCV:
+    $ sudo apt-get install gcc-6
+    $ sudo apt-get install g++-6
 
-  *Go to:  
-System Preferences > Sharing. Turn on "Remote Login". Allow access for "All Users".*
-&nbsp;  
+    $ sudo su
+    $ cd /usr/bin/
+    $ rm gcc
+    $ rm gcc-ar
+    $ rm gcc-nm
+    $ rm gcc-ranlib
+    $ rm g++
 
-1. Run  configuration.py  to specify the port, username, and IP address of the SSH server:  
-`$ python configure.py <port> <username> <ip address>` 
+    $ ln -s gcc-6 gcc
+    $ ln -s gcc-ar-6 gcc-ar
+    $ ln -s gcc-nm-6 gcc-nm
+    $ ln -s gcc-ranlib-6 gcc-ranlib
+    $ ln -s g++-6 g++
 
-2. Run the following command:  
-`$ sudo python setup.py install`  
+3. Install CUDA 9.1
+  Download https://launchpad.net/ubuntu/+archive/primary/+files/nvidia-cuda-toolkit_9.1.85.orig.tar.gz from: https://launchpad.net/ubuntu/+source/nvidia-cuda-toolkit/9.1.85-3ubuntu1
+    Add these to ~/.bashrc
+    export PATH=/usr/local/cuda-9.1/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-9.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    $ source ~/.bashrc
+    add /usr/local/cuda-9.1/lib64 to /etc/ld.so.conf
+    $ sudo ldconfig
+4. Compile OpenCV following https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/ with some modifications:
+    - in Step #1 change:
+    $ sudo apt-get install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
+     to
+    $ sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+    $ sudo apt update
+    $ sudo apt install libjasper1 libjasper-dev
+    $ sudo apt-get install libjpeg8-dev libtiff5-dev libpng-dev
+    (https://stackoverflow.com/questions/43484357/opencv-in-ubuntu-17-04/44488374#44488374)
 
-The installation will proceed automatically. If successful, the output of all the commands should roughly show:
-
-```
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-openssh-server is already the newest version.
-0 upgraded, 0 newly installed, 0 to remove and 118 not upgraded.
-[*] Installing autossh client...
-[*] Installing autossh as startup application...
-mkdir: cannot create directory ‘.ssh’: File exists
-yes: standard output: Broken pipe
-yes: write error
-Generating public/private rsa key pair.
-Enter file in which to save the key (/root/.ssh/id_rsa): priv_key already exists.
-Overwrite (y/n)? [*] Copying SSH-Keys file over to server...
-/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
-"<username>@<ip address>" 's password: 
-Number of key(s) added: 1
-
-Now try logging into the machine, with:   "ssh ' "<username>@<ip address>" '"
-and check to make sure that only the key(s) you wanted were added.
-
-[*] Installing private keys inside protected folder...
-yes: standard output: Broken pipe
-yes: write error
-[*] Moving autossh client into the /usr/local/bin/ directory...
-[*] Moving private key to /etc/auto-ssh-tunnel/
-mkdir: cannot create directory ‘/etc/auto-ssh-tunnel’: File exists
-yes: standard output: Broken pipe
-yes: write error
-
-[*] We are now finished with the installation! Restart the client to complete the installation. To run autossh, input connect.py on the terminal.
-```  
--------------------------
+    - Compile OpenCV using the command:
+    $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D WITH_CUDA=ON \
+-D ENABLE_FAST_MATH=1 \
+-D CUDA_FAST_MATH=1 \
+-D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-9.1 \
+-D WITH_CUBLAS=1 \
+-D INSTALL_PYTHON_EXAMPLES=ON \
+-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.0/modules \
+-D PYTHON_EXECUTABLE=~/.virtualenvs/cv3/bin/python \
+-D CUDA_NVCC_FLAGS=--expt-relaxed-constexpr \
+-D BUILD_EXAMPLES=ON \
+-D INSTALL_PYTHON_EXAMPLES=ON \
+-D INSTALL_C_EXAMPLES=OFF ..
 
 
 # **How the script works**  
