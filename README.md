@@ -1,5 +1,4 @@
 <img width="91" alt="va logo 2" src="https://user-images.githubusercontent.com/39509760/40403375-37fbc738-5e84-11e8-88d3-f04d9b7f21a3.PNG">
-
 #  **Overview**
 
 Smart cameras are able to track assets and people in order to maximise business revenues and reduce leakages by being "aware" of their surroundings.
